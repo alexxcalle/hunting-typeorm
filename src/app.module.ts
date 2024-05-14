@@ -3,7 +3,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Creature } from './creatures/entities/creature.entity';
-
+import { DataSource } from 'typeorm';
 @Module({
   imports: [
     TypeOrmModule.forRoot({
@@ -21,4 +21,8 @@ import { Creature } from './creatures/entities/creature.entity';
   controllers: [AppController],
   providers: [AppService],
 })
-export class AppModule {}
+export class AppModule {
+  constructor(private readonly dataSource: DataSource) {
+    console.log('dataSource', dataSource);
+  }
+}
