@@ -7,7 +7,6 @@ import { Creature } from './creatures/entities/creature.entity';
 @Module({
   imports: [
     TypeOrmModule.forRoot({
-      url: process.env.DATABASE_URL,
       type: 'postgres',
       host: process.env.POSTGRES_HOST,
       port: parseInt(process.env.POSTGRES_PORT),
