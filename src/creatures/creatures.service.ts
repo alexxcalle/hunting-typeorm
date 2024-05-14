@@ -10,6 +10,7 @@ export class CreaturesService {
     @InjectRepository(Creature)
     private readonly creatureRepository: Repository<Creature>,
   ) {}
+
   create(createCreatureDto: CreateCreatureDto) {
     return this.creatureRepository.create(createCreatureDto);
   }
