@@ -16,8 +16,8 @@ export class CreaturesController {
   constructor(private readonly creaturesService: CreaturesService) {}
 
   @Post()
-  create(@Body() newCreature: CreateCreatureDto) {
-    return this.creaturesService.create(newCreature);
+  create(@Body() createCreatureDto: CreateCreatureDto) {
+    return this.creaturesService.create(createCreatureDto);
   }
 
   @Get()
